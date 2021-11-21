@@ -1,0 +1,49 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Título</td>
+                <td>Descrição</td>
+                <td>Preço</td>
+                <td>Atualizar</td>
+                <td>Deletar</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listaProdutos">
+                <td>{{p.titulo}}</td>
+                <td>{{p.descricao}}</td>
+                <td>{{p.preco}}</td>
+                <td><button (click)="exibirAtualizar(p._id)">Atualizar</button></td>
+                <td><button (click)="deletarProduto(p._id)">Deletar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="atualizar">
+    <h2>Atualizar produto</h2>
+    <label>Título
+        <input [(ngModel)]="produtoAtualizar.titulo" placeholder="Título">
+    </label>
+    <label>Descrição
+        <input [(ngModel)]="produtoAtualizar.descricao" placeholder="Descrição">
+    </label>
+    <label>Preço
+        <input [(ngModel)]="produtoAtualizar.preco" placeholder="Preço">
+    </label>
+    <button (click)="atualizarProduto()">Atualizar produto</button>
+</div>
+<br />
+<div>
+    <h2>Cadastrar produto</h2>
+    <label>Título
+        <input [(ngModel)]="produtoCadastrar.titulo" placeholder="Título">
+    </label>
+    <label>Descrição
+        <input [(ngModel)]="produtoCadastrar.descricao" placeholder="Descrição">
+    </label>
+    <label>Preço
+        <input [(ngModel)]="produtoCadastrar.preco" placeholder="Preço">
+    </label>
+    <button (click)="cadastrarProduto()">Cadastrar produto</button>
+</div>
