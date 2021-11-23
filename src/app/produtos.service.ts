@@ -8,7 +8,7 @@ import { Produto } from '../app/Produto';
 })
 export class ProdutosService {
 
-  baseURL = "http://localhost:8080/api/produtos";
+  baseURL = "https://jose-rezende-back-produtos.glitch.me/api/produtos";
 
   constructor(private http : HttpClient) { }
 
